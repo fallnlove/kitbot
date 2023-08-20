@@ -13,6 +13,6 @@ async def make_file(event: aiogram.types.Message, state: FSMContext) -> None:
     user_name = event.text
     file_name = await create.main(user_name, event.from_user.id)
     await event.reply_document(open(file_name, 'rb'))
-    await event.reply("Если вы обшились в написании ФИО, то перейдите по ссылке еще раз")
+    await event.reply("Если вы ошиблись в написании ФИО, то перейдите по ссылке еще раз")
 
     os.remove(file_name)
