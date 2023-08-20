@@ -9,7 +9,7 @@ from kitbot.utils import load_handlers
 async def main() -> None:
     bot = aiogram.Bot(token=config.token)
     try:
-        storagegit = MemoryStorage()
+        storage = MemoryStorage()
         disp = aiogram.Dispatcher(bot=bot, storage=storage)
 
         await load_handlers.main(disp)
